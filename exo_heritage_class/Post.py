@@ -1,11 +1,14 @@
+from .Feed import Feed
+from datetime import datetime
+
 class Post:
-    def __init__(self, title: str, content: str, date: str = None, fichier=None):
+    def __init__(self, title: str, content: str,feed: Feed ,date: datetime = None, fichier=None):
         self.title = title
         self.content = content
         self.date = date
         self.fichier = fichier
-        if fichier:
-            self.load_from_file(fichier)
+        
+        feed.AddPost(self)  # Add the post to the feed's list of posts
 
 
     def __str__(self):

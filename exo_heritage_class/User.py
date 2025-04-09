@@ -68,13 +68,13 @@ class User:
             raise ValueError("User must be logged in to create a feed.")
     
         date_heure_feed = datetime.now()
-
+        feed = Feed(nom_feed,[], date_heure_feed)
         # In a real application, you would save the feed data to a database.
-        print(f"Feed '{nom_feed}' created at {date_heure_feed} successfully.")
+        print(f"Feed '{feed.name}' created at {feed.date} successfully.")
 
-        return Feed(nom_feed,[],date_heure_feed)
+        return feed
 
-    def poster_un_message(self, message: str, feed, fichier=None):
+    def poster_un_message(self, title: str,message: str, feed: Feed, fichier=None):
         """
         Simulate posting a message to a feed.
 
@@ -86,10 +86,18 @@ class User:
             raise ValueError("User must be logged in to post a message.")
         # Récupérer la date et l'heure actuelles
         date_heure_message = datetime.now()
+        print("date heure type : ", type(date_heure_message))
 
+        print(f"Type de feed : {type(feed)}")
         # In a real application, you would save the message data to a database.
-        print(f"Message posted to feed '{feed.nom_feed}' at {date_heure_message}: {message}")
+        print(f"Message posted to feed '{feed.name}' at {date_heure_message}: {message}")
         if fichier:
             print(f"file : '{fichier}'")
 
-        return Post(message, feed, date_heure_message, fichier)
+        return Post(title, message, feed, date_heure_message, fichier)
+    
+class Administrator(User):
+    """
+    Class representing an administrator user in the exo_heritage system.
+    """
+    

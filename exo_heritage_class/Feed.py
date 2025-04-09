@@ -1,11 +1,11 @@
 
-
+from datetime import datetime
 class Feed:
     """
     Feed class to represent a feed with a name and a list of items.
     """
 
-    def __init__(self, name: str, Posts: list, date: str = None):
+    def __init__(self, name: str, Posts: list, date: datetime = None):
         """
         Initialize the Feed with a name and a list of items.
 
@@ -16,6 +16,15 @@ class Feed:
         self.Posts = Posts
         self.date = date
 
+
+    def AddPost(self, post):
+        """
+        Add a post to the feed.
+
+        :param post: The post to add.
+        """
+        self.Posts.append(post)
+        print(f"Post added: {post}")
 
     
     def __repr__(self):

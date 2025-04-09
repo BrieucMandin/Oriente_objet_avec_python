@@ -1,0 +1,48 @@
+# Collection exercise
+
+import class_ as c
+import class_.Boite_a_outils as b
+import class_.Marteaux as m
+import class_.Tournevis as t
+
+
+
+# Création des instances de Marteaux
+marteau1 = m.Martaux("Marteau en acier", 15, 1.2, "30cm", "Acier", "Gris")
+marteau2 = m.Martaux("Marteau en bois", 10, 0.8, "28cm", "Bois", "Marron")
+marteau3 = m.Martaux("Marteau en caoutchouc", 12, 0.9, "32cm", "Caoutchouc", "Noir")
+
+# Collection de Marteaux
+marteaux_collection = [marteau1, marteau2, marteau3]
+
+# Création des instances de Tournevis
+tournevis1 = t.Tournevis("Rouge", "15cm", "Cruciforme")
+tournevis2 = t.Tournevis("Bleu", "18cm", "Plat")
+tournevis3 = t.Tournevis("Vert", "20cm", "Torx")
+
+# Collection de Tournevis
+tournevis_collection = [tournevis1, tournevis2, tournevis3]
+
+# Création des instances de Boite à Outils
+boite1 = b.Boite_a_outils("Noir", "Grande")
+boite2 = b.Boite_a_outils("Rouge", "Moyenne")
+boite3 = b.Boite_a_outils("Bleu", "Petite")
+
+# Collection de Boites à Outils
+boites_a_outils_collection = [boite1, boite2, boite3]
+
+def main():
+    print("Marteaux dans la collection :")
+    for marteau in marteaux_collection:
+        print(marteau)
+
+    print("\nTournevis dans la collection :")
+    for tournevis in tournevis_collection:
+        print(tournevis)
+    
+    print("\nBoites à outils dans la collection :")
+    for boite in boites_a_outils_collection:
+        print(f"Boite de couleur {boite.couleur} et de taille {boite.taille}")
+
+
+main()
